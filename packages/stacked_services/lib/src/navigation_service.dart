@@ -11,6 +11,8 @@ class NavigationTransition {
   static const String Rotate = 'zoom';
   static const String RightToLeftWithFade = 'righttoleftwithfade';
   static const String LeftToRighttWithFade = 'lefttorightwithfade';
+  static const String Cupertino = "cupertino";
+  static const String CupertinoDialog = "cupertinodialog";
 }
 
 /// Provides a service that can be injected into the ViewModels for navigation.
@@ -18,6 +20,8 @@ class NavigationTransition {
 /// Uses the Get library for all navigation requirements
 class NavigationService {
   Map<String, Transition> _transitions = {
+    NavigationTransition.Cupertino: Transition.cupertino,
+    NavigationTransition.CupertinoDialog: Transition.cupertinoDialog,
     NavigationTransition.Fade: Transition.fade,
     NavigationTransition.RightToLeft: Transition.rightToLeft,
     NavigationTransition.LeftToRight: Transition.leftToRight,
